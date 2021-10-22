@@ -1,0 +1,133 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        h2{
+            border-bottom: 4px solid aqua;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write('<h2>第一题</h2>');
+        {		let p = document.createElement('p');
+                input1 = document.createElement('input'),
+                input2 = document.createElement('input'),
+                btn = document.createElement('button'),
+                span = document.createElement('span');
+            btn.innerHTML = '比较';
+            p.appendChild(input1);
+            p.appendChild(input2);
+            p.appendChild(btn);
+            p.appendChild(span);
+            document.body.appendChild(p);
+            btn.onclick = function(){
+                if(typeof a === 'number' && typeof b === 'number'){
+                    alert('请输入数字！');
+                }else{
+                    let a = +input1.value,
+                    b = +input2.value;
+                    span.innerHTML = a;
+                    if(a > b){
+                        span.innerHTML += '大';
+                }else if (a < b){
+                    span.innerHTML += '小';
+                }else {
+                    span.innerHTML += '等';
+                }
+                span.innerHTML += '于' + b;
+                }
+            }
+        }
+        
+        document.write('<h2>第二题</h2>');
+        {
+            let a = +prompt('（是否被5整除）第二题的a:');
+            while(isNaN(a)){
+                console.log(typeof a,a);
+                a = +prompt('（判断被5整除）请输入一个数字：')
+            }
+            document.write(`${a},${a % 5 === 0 ? '' : '不'}可以被5整除`)
+        }
+        
+        document.write('<h2>第三题</h2>');
+        {
+            let str = '100以内的偶数：';
+            for(let i = 0; i < 100; i++){
+                if(i % 2 === 0){
+                    str += i + ' ';
+                }
+            }
+            document.write(str);
+        }
+        
+        document.write('<h2>第四题</h2>');
+        {
+            let str = '100以内能被7整除的数：',
+                i = 0;
+            while(i++ < 100){
+                if(i % 7 === 0){
+                    str += i + ' ';
+                }
+            }
+            document.write(str);
+        }
+    
+        document.write('<h2>第五题</h2>');
+        {
+            let a = +prompt('(三数比大小)第五题a：');
+            while(isNaN(a)){
+                a = +prompt('(三数比大小)第五题a：');
+            }
+            let b = +prompt('(三数比大小)第五题b：');
+            while(isNaN(b)){
+                b = +prompt('(三数比大小)第五题b：');
+            }
+            let c = +prompt('(三数比大小)第五题c：');
+            while(isNaN(c)){
+                c = +prompt('(三数比大小)第五题c：');
+            }
+            document.write(`a=${a},b=${b},c=${c}<br>${a > b ? a : (b > c ? b : c)}`)
+        }
+
+        document.write('<h2>第六题</h2>');
+        {
+            let odd = '100以内奇数：',
+                even = '100以内偶数：';
+            for(let i = 0; i < 100; i++){
+                if(i % 2 !== 0){
+                    odd += i + ' ';
+                }else {
+                    even += i + ' ';
+                }
+            }
+            document.write(odd + '<br>');
+            document.write(even);
+        }
+		
+        document.write('<h2>第七题</h2>');
+        function test(a){
+            let str = '',
+                sum = 0;
+            if(!a){
+                alert(a + "请至少传入一个值！");
+            } else {
+                for(let i = arguments.length - 1; i >= 0; i--){
+                    sum += arguments[i];
+                    str += arguments[i] + ((i === 0) ? (' = ' + sum) : ' + ');
+                }
+            }
+            return str;
+        }
+        document.write(test(1,2,3,4,5,6,7,8,9) + '<br>');
+        document.write(test(3,6,9,1,4,7) + '<br>');
+        document.write(test(1) + '<br>');
+    </script>
+</body>
+</html>
