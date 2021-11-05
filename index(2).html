@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			h1 {
+				text-align: center;
+				background-color: black;
+				color: white;
+				margin: 50px 0;
+			}
+			/* 第一题 */
+			#one {
+				width: 605px;
+				margin: 50px auto;
+			}
+			.boxs {
+				border: 1px solid;
+				width: 150px;
+			}
+			/* 第二题 */
+			#yi {
+				width: 605px;
+				margin: 50px auto;
+			}
+			#yi dt {
+				float: left;
+			}
+			.submit {
+				float: left;
+				width: 50px;
+				color: black;
+				font-weight: bold;
+				margin-left: 20px;
+			}
+			.chongzhi {
+				float: left;
+				width: 50px;
+				color: black;
+				font-weight: bold;
+				margin-left: 20px;
+			}
+			#yi p {
+				display: inline-block;
+				color: red;
+				font-size: 10px;
+			}
+			/* 第三题 */
+			.third dl {
+				margin-top: 20px;
+			}
+			
+			.third dt[class^="a_"] {
+				background-color: #abcdef;
+				width: 100px;
+				height: 40px;
+				float: left;
+				margin-top: 5px;
+				line-height: 40px;
+				text-align: center;
+				font-weight: 700;
+				font-size: 18px;
+			}
+			
+			.third dt:first-child {
+				margin-top: 0px;
+			}
+			
+			.third dd {
+				width: 495px;
+				height: 30px;
+				background-color: #fddcb7;
+				margin-left: 105px;
+				margin-top: 5px;
+				padding: 5px 0 5px 5px;
+			}
+			
+			.third .b_subim {
+				width: 595px;
+				height: 30px;
+				margin-top: 5px;
+				background-color: #aabbcb;
+				padding: 5px;
+				text-align: center;
+			}
+			
+			.third .mz input,
+			.third .pwd input {
+				height: 28px;
+				box-shadow: -1px -1px 1px 0px gray;
+				border: 1px #404040 solid;
+				border-bottom-color: #b6b6b6;
+				border-right-color: #b6b6b6;
+				font-size: 18px;
+				padding-left: 10px;
+			}
+			
+			.third .mz input {
+				width: 240px;
+			}
+			
+			.third .pwd input {
+				width: 220px;
+			
+			}
+			
+			.third .sex {
+				line-height: 30px;
+			}
+			
+			.third .sex label {
+				margin-left: 10px;
+				font-weight: 700;
+			}
+			
+			.third .ss select {
+				box-shadow: -1px -1px 1px 0px gray;
+				border: 1px #404040 solid;
+				border-bottom-color: #b6b6b6;
+				border-right-color: #b6b6b6;
+				width: 50px;
+				height: 30px;
+			}
+			
+			.third .course label {
+				margin-left: 10px;
+				font-weight: 700;
+			}
+			
+			.third .course {
+				line-height: 30px;
+			}
+			
+			.third .course label input {
+				box-shadow: -1px -1px 1px 0px gray;
+				border: 1px #404040 solid;
+				border-bottom-color: #b6b6b6;
+				border-right-color: #b6b6b6;
+			}
+			
+			.third .b_subim input {
+				width: 100px;
+				height: 30px;
+				box-shadow: 1px 1px 1px 0px gray;
+				border: 1px #404040 solid;
+				border-top-color: #b6b6b6;
+				border-left-color: #b6b6b6;
+				font-weight: 700;
+				font-size: 17px;
+				background-color: #d4cfc6;
+				cursor: pointer;
+			}
+			
+			.third {
+				width: 605px;
+				margin: 50px auto;
+			}
+			
+			.third p {
+				display: inline-block;
+				font-size: 10px;
+				color: red;
+			}
+
+		</style>
+	</head>
+	<body>
+		<!-- 第一题 -->
+		<h1>第一题</h1>
+		<div id="one">
+			
+			<input type="checkbox" class="quanxuan"  />全选/全不选
+			<input type="button" class="fanxuan" value="反选" />
+			<div class="boxs">
+				<input type="checkbox">复选框信息<br>
+				<input type="checkbox">复选框信息<br>
+				<input type="checkbox">复选框信息<br>
+				<input type="checkbox">复选框信息<br>
+				<input type="checkbox">复选框信息
+			</div>
+		</div>
+		<!-- 第二题 -->
+		<h1>第二题</h1>
+		<div id="yi">
+			<form action="" method="">
+				<dl>
+					<dt>姓名：</dt>
+					<dd>
+						<input type="text" placeholder="123" class="name" />
+						<p class="nameprea"></p>
+					</dd>
+					<dt>密码：</dt>
+					<dd class="mima">
+						<input type="password" placeholder="密码" value=""><p></p>
+					</dd>
+					<dt>性别：</dt>
+					<dd class="gender">
+						<input type="radio" name="1">男
+						<input type="radio" name="1">女
+						<p></p>
+					</dd>
+					<dt>年龄：</dt>
+					<dd>
+						<select name="">
+							<option value="" selected="">19</option>
+							<option value="">20</option>
+							<option value="">21</option>
+							<option value="">22</option>
+							<option value="">23</option>
+							<option value="">24</option>
+						</select>
+					</dd>
+					<dt>爱好：</dt>
+					<dd class="aihao">
+						<input type="checkbox">读书
+						<input type="checkbox">音乐
+						<input type="checkbox">上网
+						<input type="checkbox">玩游戏
+						<p></p>
+					</dd>
+					<dt>简介：</dt>
+					<dd class="jianjie">
+						<textarea rows="" cols="" ></textarea>
+						<p></p>
+					</dd>
+					<dd>
+						<input type="button" value="注册" class="submit" formaction="ok.html" />
+					</dd>
+					<dd>
+						<input type="reset" value="重置" class="chongzhi" />
+					</dd>
+				</dl>
+			</form>
+		</div>
+		<!-- 第三题 -->
+		<h1>第三题</h1>
+		<div class="third">
+		    <h2>Information Form</h2>
+		    <form action="./ok.html">
+		    <div class="conter">
+		        <dl>
+		            <!-- name -->
+		            <dt class="a_mz">name</dt>
+		            <dd class="mz">
+		                <input type="text"> <p></p>
+		            </dd>
+		            <!-- pwd -->
+		            <dt class="a_pwd">pwd</dt>
+		            <dd class="pwd">
+		                <input type="password"><p></p>
+		            </dd>
+		            <!-- sex -->
+		            <dt class="a_sex">sex</dt>
+		            <dd class="sex">
+		                <label>
+		                    <input type="radio" name="gender">
+		                    male
+		                </label>
+		                <label>
+		                    <input type="radio" name="gender">
+		                    female
+		                </label>
+		                <p></p>
+		            </dd>
+		            <!-- age -->
+		            <dt class="a_age">age</dt>
+		            <dd class="ss">
+		                <select name="" id="" size="1">
+		                <option value="">16</option>
+		                <option value="">17</option>
+		                <option value="">18</option>
+		                <option value="">19</option>
+		                <option value="">20</option>
+		                <option value="">21</option>
+		                <option value="">22</option>
+		                <option value="">23</option>
+		                </select>
+		            </dd>
+		            <!-- course -->
+		            <dt class="a_course">course</dt>
+		            <dd class="course">
+		                <label>
+		                    <input type="checkbox">
+		                    Chinese
+		                </label>
+		                <label>
+		                    <input type="checkbox">
+		                    Math                   
+		                </label>
+		                <label>
+		                    <input type="checkbox">
+		                    English                   
+		                </label>
+		                <p></p>
+		            </dd>
+		            <dt class="b_subim">
+		                <input type="button" value="Submit it!" class="ba_subim">
+		                <input type="reset" value="Reset it!">
+		            </dt>
+		        </dl>
+		    </div>
+		    </form>
+		</div>
+		<h1>E-R图</h1>
+		<img src="img/1.jpg">
+		<!-- JS开始 -->
+		<script>
+		//第一题
+			let quanxuan = document.querySelector('.quanxuan');
+			let fanxuan = document.querySelector('.fanxuan');
+			const neirong = document.querySelectorAll('.boxs input');
+			quanxuan.onclick = function() {
+				for(let i=0; i<neirong.length; i++){
+					neirong[i].checked = true;
+				}
+				if (quanxuan.checked == false) {
+					for(let a=0; a<neirong.length; a++){
+						neirong[a].checked = false;
+					}
+				}
+			}
+			fanxuan.onclick = function() {
+				for(let i=0; i<neirong.length; i++){
+					neirong[i].checked = !neirong[i].checked
+				}
+			}
+			function f() {
+				if (neirong[0].checked == true && neirong[1].checked == true && neirong[2].checked == true && neirong[3].checked == true && neirong[4].checked == true) {
+					quanxuan.checked = true;
+				}else {
+					quanxuan.checked = false;
+				}
+			}
+			document.addEventListener('click',f);
+		//第二题
+		 const name = document.querySelector('.name');
+		 const nameprea = document.querySelector('.nameprea');
+		 const mima = document.querySelector('.mima input');
+		 const mimaprea = document.querySelector('.mima p')
+		 const gender = document.querySelectorAll('.gender input');
+		 const genderprea = document.querySelector('.gender p');
+		 const aihao = document.querySelectorAll('.aihao input');
+		 const aihaoprea = document.querySelector('.aihao p');
+		 const jianjie = document.querySelector('.jianjie textarea');
+		 const jianjieprea = document.querySelector('.jianjie p');
+		 const tijiao = document.querySelector('.submit');
+		 tijiao.onclick = function(){
+		 	let fash = true;
+		 	if(name.value == ''){
+		 		nameprea.textContent = '姓名不能为空';
+		 		fash = false;
+		 	} else {
+		 		nameprea.textContent = '';
+		 	}
+		 	if(mima.value.length>=2 && mima.value.length<=10){
+		 		mimaprea.textContent = ''
+		 	}else {
+		 		mimaprea.textContent = '密码长度2-10位';
+		 		fash = false;
+		 	}
+		 	if(gender[0].checked == false && gender[1].checked == false) {
+		 		genderprea.textContent = '性别必须选择一个';
+		 		fash = false;
+		 	}else {
+		 		genderprea.textContent = '';
+		 	}
+		 	if(aihao[0].checked == false && aihao[1].checked == false && aihao[2].checked == false){
+		 		aihaoprea.textContent = '爱好至少选择一个';
+		 		fash = false;
+		 	}else {
+		 		aihaoprea.textContent = ''
+		 	}
+		 	if (jianjie.value.length >=10) {
+		 		jianjieprea.textContent = '';
+		 	} else {
+		 		jianjieprea.textContent = '简介至少10个字符';
+		 		fash = false;
+		 	}
+		 	if (fash == true) {
+		 		tijiao.type = 'submit';
+		 	}
+		 }
+		 //第三题
+		 const mz = document.querySelector('.mz input');
+		 const mp = document.querySelector('.mz p');
+		 const mm = document.querySelector('.pwd input');
+		 const mmp = document.querySelector('.pwd p');
+		 const nn = document.querySelectorAll('.sex input');
+		 const nnp =  document.querySelector('.sex p');
+		 const kc = document.querySelectorAll('.course input');
+		 const kcp = document.querySelector('.course p');
+		 const tj = document.querySelector('.ba_subim');
+		 tj.onclick = function() {
+		 	let queding = true;
+		 	let f =0;
+		 	if (mz.value == ''){
+		 		mp.textContent = '姓名不能为空';
+		 		queding = false;
+		 	} else {
+		 		mp.textContent = '';
+		 	}
+		 	if(mm.value.length>=2 && mm.value.length<=10){
+		 		mmp.textContent = ''
+		 	}else {
+		 		mmp.textContent = '密码长度2-10位';
+		 		queding = false;
+		 	}
+		 	if(nn[0].checked == false && nn[1].checked == false) {
+		 		nnp.textContent = '性别必须选择一个';
+		 		queding = false;
+		 	}else {
+		 		nnp.textContent = '';
+		 	}
+		 	for(let i=0; i<kc.length; i++) {
+		 		if (kc[i].checked == true){
+		 			f++;
+		 		}
+		 	}
+		 	if (f>=2) {
+		 		kcp.textContent = '';
+		 	}else {
+		 		kcp.textContent = '课程至少选择两个';
+		 		queding = false;
+		 	}
+		 	if(queding == true) {
+		 		tj.type = 'submit';
+		 	}
+		 	f = 0;
+		 }
+		</script>
+	</body>
+</html>

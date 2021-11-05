@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap-theme.min.css">
+    <script src="./bootstrap-3.4.1-dist/js/jquery.min.js"></script>
+    <script src="./bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+            background-color: gray;
+            color: white;
+            margin: 50px 0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        input {
+            outline: none;
+        }
+        textarea {
+            resize: none;
+        }
+        .clearfix::after {
+            clear: both;
+            content: '';
+            display: block;
+        }
+        .first {
+            width: 150px;
+            margin: 50px auto;
+        }
+        /* 第二题 */
+        .second {
+            width: 500px;
+            margin: 25px auto;
+        }
+        .second dl dd {
+            width: 400px;
+            font-size: 15px;
+            height: 24px;
+            line-height: 24px;
+        }
+        /* 给dt添加浮动让他们在一行显示 */
+        .second dl dt {
+            width: 55px;
+            float: left;
+            /* 防止问题贴边 */
+            text-align: center;
+        }
+        /* 纯属美化为了更接近效果 */
+        .second dl input {
+            box-shadow: -1px -1px 1px 0px gray;
+            border: 1px #404040 solid;
+            border-bottom-color: #b6b6b6;
+            border-right-color: #b6b6b6;
+            /* 添加此代码让性别和爱好在同排显示，系统默认按基线对其 */
+            vertical-align: middle;
+        }
+        /* 美化更接近效果 */
+        .second .gender input {
+            box-shadow: none;
+        }
+        .second .hobby input {
+            box-shadow: none;
+        }
+        .second .gender label
+        ,.second .hobby label {
+            margin-left: 5px;
+        }
+        .second textarea {
+            height: 120px;
+            box-shadow: -1px -1px 1px 0px gray;
+            border: 1px #404040 solid;
+            border-bottom-color: #b6b6b6;
+            border-right-color: #b6b6b6;
+        }
+        /* 利用定位标签把简介强制贴下边框 */
+        .second .text {
+            height: 120px;
+            position: relative;
+        }
+        .second .text span {
+            position: absolute;
+            bottom: 0;
+            width: 55px;
+            left: 0;
+            text-align: center;
+        }
+        /* 后期调整出现塌陷 */
+        .second .texta {
+            height: 120px;
+        }
+        /* 按钮设置 */
+        .second .submit
+        , .second .reset {
+            width: 80px;
+            height: 25px;
+            font-size: 16px;
+            box-shadow: 1px 1px 1px 0px gray;
+            border: 1px #404040 solid;
+            border-top-color: #b6b6b6;
+            border-left-color: #b6b6b6;
+        }
+        /* 为了更接近效果 */
+        .second .button {
+            margin-top: 5px;
+        }
+        .second p {
+            display: inline-block;
+        }
+
+        /* 第二题第二问 */
+        /* 前面几个带你回顾html，这几个自己想什么意思 */
+        h2 {
+            text-align: center;
+            font-weight: 700;
+        }
+        .third dl {
+            margin-top: 20px;
+        }
+        .third dt[class^="a_"] {
+            background-color: #abcdef;
+            width: 100px;
+            height: 40px;
+            float: left;
+            margin-top: 5px;
+            line-height: 40px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .third dt:first-child {
+            margin-top: 0px;
+        }
+        .third dd {
+            width: 495px;
+            height: 30px;
+            background-color: #fddcb7;
+            margin-left: 105px;
+            margin-top: 5px;
+            padding: 5px 0 5px 5px;
+        }
+        .third .b_subim {
+            width: 595px;
+            height: 30px;
+            margin-top: 5px;
+            background-color: #aabbcb;
+            padding: 5px;
+            text-align: center;
+        }
+        .third .mz input
+        ,.third .pwd input {
+            height: 28px;
+            box-shadow: -1px -1px 1px 0px gray;
+            border: 1px #404040 solid;
+            border-bottom-color: #b6b6b6;
+            border-right-color: #b6b6b6;
+            font-size: 18px;
+            padding-left: 10px;
+        }
+        .third .mz input {
+            width: 240px;
+        }
+        .third .pwd input {
+            width: 220px;
+            
+        }
+        .third .sex {
+            line-height: 30px;
+        }
+        .third .sex label {
+            margin-left: 10px;
+            font-weight: 700;
+        }
+        .third .ss select {
+            box-shadow: -1px -1px 1px 0px gray;
+            border: 1px #404040 solid;
+            border-bottom-color: #b6b6b6;
+            border-right-color: #b6b6b6;
+            width: 50px;
+            height: 30px;
+        }
+        .third .course label {
+            margin-left: 10px;
+            font-weight: 700;
+        }
+        .third .course {
+            line-height: 30px;
+        }
+        .third .course label input {
+            box-shadow: -1px -1px 1px 0px gray;
+            border: 1px #404040 solid;
+            border-bottom-color: #b6b6b6;
+            border-right-color: #b6b6b6;
+        }
+        .third .b_subim input {
+            width: 100px;
+            height: 30px;
+            box-shadow: 1px 1px 1px 0px gray;
+            border: 1px #404040 solid;
+            border-top-color: #b6b6b6;
+            border-left-color: #b6b6b6;
+            font-weight: 700;
+            font-size: 17px;
+            background-color: #d4cfc6;
+            cursor: pointer;
+        }
+        .third {
+            width: 605px;
+            margin: 50px auto;
+        }
+        .third p {
+            display: inline-block;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <h1>第一题</h1>
+    <div class="first">
+        <input type="checkbox" id="aaa" class="first-input">
+        <label for="aaa">全选/全不选</label>
+        <button class="first-btn">反选</button>
+        <ul class="first-ul">
+            <li>
+                琴 <input type="checkbox" class="al"> 
+            </li>
+            <li>
+                棋 <input type="checkbox" class="al"> 
+            </li>
+            <li>
+                书 <input type="checkbox" class="al"> 
+            </li>
+            <li>
+                画 <input type="checkbox" class="al"> 
+            </li>
+        </ul>
+    </div>
+    <h1>第二题</h1>
+    <div class="second">
+        <form action="./ok.html">
+        <dl>
+            <dt>
+                <label for="name">姓名：</label>
+            </dt>
+            <dd class="name">
+                <input type="text" id="name"> <p></p>
+            </dd>
+            <dt>
+                <label for="password">密码：</label>
+            </dt>
+            <dd class="password">
+                <input type="password" id="password"> <p></p>
+            </dd>
+            <dt>
+                性别：
+            </dt>
+            <dd class="gender">   
+                <label>
+                    <input type="radio" name="radio">
+                    男
+                </label>
+                <label>
+                    <input type="radio" name="radio">
+                    女
+                </label>
+                <p></p>
+            </dd>
+            <dt>
+                <label for="age">年龄：</label>
+            </dt>
+            <dd>
+                <select name="" id="">
+                    <option value="">01</option>
+                    <option value="">02</option>
+                    <option value="">03</option>
+                    <option value="">04</option>
+                    <option value="">05</option>
+                    <option value="">06</option>
+                    <option value="">07</option>
+                    <option value="">08</option>
+                    <option value="">09</option>
+                    <option value="">10</option>
+                    <option value="">11</option>
+                    <option value="">12</option>
+                    <option value="">13</option>
+                    <option value="">14</option>
+                    <option value="">15</option>
+                    <option value="">16</option>
+                    <option value="">17</option>
+                    <option value="">18</option>
+                    <option value="">19</option>
+                    <option value="">20</option>
+                    <option value="">21</option>
+                    <option value="">22</option>
+                    <option value="">23</option>
+                    <option value="">24</option>
+                    <option value="">25</option>
+                    <option value="">26</option>
+                    <option value="">27</option>
+                    <option value="">28</option>
+                    <option value="">29</option>
+                    <option value="">30</option>
+                    <option value="">31</option>
+                    <option value="">32</option>
+                    <option value="">33</option>
+                    <option value="">34</option>
+                    <option value="">35</option>
+                    <option value="">36</option>
+                    <option value="">37</option>
+                    <option value="">38</option>
+                    <option value="">39</option>
+                    <option value="">40</option>
+                    <option value="">41</option>
+                    <option value="">42</option>
+                    <option value="">43</option>
+                    <option value="">44</option>
+                    <option value="">45</option>
+                    <option value="">46</option>
+                    <option value="">47</option>
+                    <option value="">48</option>
+                    <option value="">49</option>
+                    <option value="">50</option>
+                </select>
+            </dd>
+            <dt>
+                爱好：
+            </dt>
+            <dd class="hobby">
+                <label>
+                    <input type="checkbox" name="hobby">
+                    读书
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby">
+                    音乐
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby">
+                    上网
+                </label>
+                <p></p>
+            </dd>
+            <dt class="text">
+                <span>简介：</span>
+            </dt>
+            <dd class="texta">
+                <textarea name="" id="" cols="25" rows="10"></textarea>
+                <p></p>
+            </dd>
+            <dd class="button">
+                <input type="button" class="submit" value="提交">
+                <input type="reset" class="reset">
+            </dd>
+        </dl>
+        
+    </form>
+    </div>
+    <h1>第二题第二问</h1>
+    <div class="third">
+        <h2>Information Form</h2>
+        <form action="./ok.html">
+        <div class="conter">
+            <dl>
+                <!-- name -->
+                <dt class="a_mz">name</dt>
+                <dd class="mz">
+                    <input type="text"> <p></p>
+                </dd>
+                <!-- pwd -->
+                <dt class="a_pwd">pwd</dt>
+                <dd class="pwd">
+                    <input type="password"><p></p>
+                </dd>
+                <!-- sex -->
+                <dt class="a_sex">sex</dt>
+                <dd class="sex">
+                    <label>
+                        <input type="radio" name="gender">
+                        male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender">
+                        female
+                    </label>
+                    <p></p>
+                </dd>
+                <!-- age -->
+                <dt class="a_age">age</dt>
+                <dd class="ss">
+                    <select name="" id="" size="1">
+                    <option value="">01</option>
+                    <option value="">02</option>
+                    <option value="">03</option>
+                    <option value="">04</option>
+                    <option value="">05</option>
+                    <option value="">06</option>
+                    <option value="">07</option>
+                    <option value="">08</option>
+                    <option value="">09</option>
+                    <option value="">10</option>
+                    <option value="">11</option>
+                    <option value="">12</option>
+                    <option value="">13</option>
+                    <option value="">14</option>
+                    <option value="">15</option>
+                    <option value="">16</option>
+                    <option value="">17</option>
+                    <option value="">18</option>
+                    <option value="">19</option>
+                    <option value="">20</option>
+                    <option value="">21</option>
+                    <option value="">22</option>
+                    <option value="">23</option>
+                    <option value="">24</option>
+                    <option value="">25</option>
+                    <option value="">26</option>
+                    <option value="">27</option>
+                    <option value="">28</option>
+                    <option value="">29</option>
+                    <option value="">30</option>
+                    <option value="">31</option>
+                    <option value="">32</option>
+                    <option value="">33</option>
+                    <option value="">34</option>
+                    <option value="">35</option>
+                    <option value="">36</option>
+                    <option value="">37</option>
+                    <option value="">38</option>
+                    <option value="">39</option>
+                    <option value="">40</option>
+                    <option value="">41</option>
+                    <option value="">42</option>
+                    <option value="">43</option>
+                    <option value="">44</option>
+                    <option value="">45</option>
+                    <option value="">46</option>
+                    <option value="">47</option>
+                    <option value="">48</option>
+                    <option value="">49</option>
+                    <option value="">50</option>
+                    <option value="">51</option>
+                    <option value="">52</option>
+                    <option value="">53</option>
+                    <option value="">54</option>
+                    <option value="">55</option>
+                    <option value="">56</option>
+                    <option value="">57</option>
+                    <option value="">58</option>
+                    <option value="">59</option>
+                    <option value="">60</option>
+                    </select>
+                </dd>
+                <!-- course -->
+                <dt class="a_course">course</dt>
+                <dd class="course">
+                    <label>
+                        <input type="checkbox">
+                        Chinese
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Math                   
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        English                   
+                    </label>
+                    <p></p>
+                </dd>
+                <dt class="b_subim">
+                    <input type="button" value="Submit it!" class="ba_subim">
+                    <input type="reset" value="Reset it!">
+                </dt>
+            </dl>
+        </div>
+        </form>
+    </div>
+    <script>
+    {
+        const b = document.querySelector('.first-input')
+        const a = document.querySelectorAll('.al')
+        $('.first-input').click(function(){
+            if(b.checked == true){
+                for(let i = 0; i < a.length; i++){
+                    a[i].checked = true;
+                }
+            }else {
+                for(let i = 0; i < a.length; i++){
+                    a[i].checked = false;
+                }
+            }       
+        })
+        $('.first-btn').click(function(){
+            for(let i = 0; i < a.length; i++){
+                if(a[i].checked == true){
+                    a[i].checked = false;
+                } else {
+                    a[i].checked = true;
+                }
+            }       
+        })
+    }
+    // 第二题第一问
+    {
+        const name = document.querySelector('.name input');
+        const namepare = document.querySelector('.name p');
+        const password = document.querySelector('.password input');
+        const pwpare = document.querySelector('.password p');
+        const gender = document.querySelectorAll('.gender input');
+        const genderpare = document.querySelector('.gender p');
+        const hobby = document.querySelectorAll('.hobby input');
+        const hobbyp = document.querySelector('.hobby p');
+        const text = document.querySelector('.texta textarea');
+        const textp = document.querySelector('.texta p');
+        const btn1 = document.querySelector('.submit')
+        $('.submit').click(function(){
+            let fash = true;
+                if (name.value == ''){
+                    $('.name p').css('color','red');
+                    namepare.textContent = '姓名不能为空';
+                    fash = false;
+                } else {
+                    namepare.textContent = '';
+                }
+                if (password.value.length >= 2 && password.value.length <= 10) {
+                    pwpare.textContent = '';
+                } else {
+                    $('.password p').css('color','red');
+                    pwpare.textContent = '密码长度2-10位';
+                    fash = false;
+                }
+                if (gender[0].checked == false && gender[1].checked == false) {
+                    
+                    $('.gender p').css('color','red');
+                    genderpare.textContent = '性别必须选择一项';
+                    fash = false;
+                } else {
+                    genderpare.textContent = '';
+                }
+                if (hobby[0].checked == false && hobby[1].checked == false && hobby[2].checked == false) {
+                    $('.hobby p').css('color','red');
+                    hobbyp.textContent = '爱好必须选择一项';
+                    fash = false;
+                } else {
+                    hobbyp.textContent = '';
+                }
+                if (text.value.length >= 10) {
+                    textp.textContent = '';
+                } else {
+                    $('.texta p').css('color','red');
+                    textp.textContent = '简介至少10个字符';
+                    fash = false;
+                }
+                if (fash == true) {
+                    btn1.type = 'submit';
+                }
+        })
+    }
+    // 第二题第二问
+    {
+        const mz = document.querySelector('.mz input');
+        const mzp = document.querySelector('.mz p');
+        const pwd = document.querySelector('.pwd input');
+        const pwdp = document.querySelector('.pwd p');
+        const sex = document.querySelectorAll('.sex input');
+        const sexp = document.querySelector('.sex p');
+        const course = document.querySelectorAll('.course input');
+        const cp = document.querySelector('.course p');
+        const btn2 = document.querySelector('.ba_subim');
+        $('.ba_subim').click(function(){
+            let flsh = true;
+            let f = 0;
+            if (mz.value == ''){
+                    $('.mz p').css('color','red');
+                    mzp.textContent = 'The name cannot be empty';
+                    flsh = false;
+            } else {
+                mzp.textContent = '';
+            }
+            if (pwd.value.length >= 2 && pwd.value.length <= 10) {
+                    pwdp.textContent = '';
+            } else {
+                $('.pwd p').css('color','red');
+                pwdp.textContent = 'The password contains 2 to 10 characters';
+                flsh = false;
+            }
+            if (sex[0].checked == false && sex[1].checked == false) {     
+                $('.sex p').css('color','red');
+                sexp.textContent = 'Gender must be selected';
+                flsh = false;
+            } else {
+                sexp.textContent = '';
+            }
+            for (let i = 0; i < course.length; i++){
+                if (course[i].checked == true) {
+                    f++;
+                }
+            }
+            if(f >= 2) {
+                cp.textContent = '';
+            } else {
+                $('.course p').css('color','red');
+                cp.textContent = 'Gender must be selected';
+                flsh = false;
+            }
+            if (flsh == true) {
+                btn2.type = 'submit';
+            }
+            f = 0;
+        })
+    }
+    </script>
+</body>
+</html>
