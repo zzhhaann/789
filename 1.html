@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .drop {
+            display: block;
+        }
+        span {
+            cursor: pointer;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>第一题</h1>
+    <input type="text">
+    <button class="add">添加</button>
+    <ol class="centent">
+
+    </ol>
+    <button class="drop">清空列表</button>
+    <hr>
+    <h2></h2>
+    <ol>
+        <li>C</li>
+        <li>B</li>
+        <li>B</li>
+        <li>B</li>
+        <li>D</li>
+        <li>B</li>
+        <li>D</li>
+        <li>D</li>
+        <li>A</li>
+        <li>A</li>
+        <li>C</li>
+        <li>A</li>
+        <li>B</li>
+        <li>D</li>
+        <li>A</li>
+        <li>C</li>
+        <li>A</li>
+        <li>B</li>
+        <li>B</li>
+        <li>D</li>
+    </ol>
+    <hr>
+    <h1>第三题</h1>
+    <pre>
+    第三题
+
+    for ($i = 1; $i <= 100; $i++) {
+        echo $i . '  ';
+    };
+    echo '<br>';
+    for ($i = 1; $i <= 100; $i++) {
+        if ($i % 2 == 0) {
+            echo $i . '  ';
+        }
+    };
+    echo '<br>';
+    echo '第一写法';
+    for ($i = 1; $i <= 100; $i++) {
+        if ($i % 3 == 0) {
+            echo 'foo   ';
+        }
+        if ($i % 5 == 0) {
+            echo 'bar   ';
+        }
+        if ($i % 5 == 0 && $i % 3 == 0) {
+            echo 'foobar   ';
+        }
+    };
+    echo '<br>';
+    echo '<br>';
+    echo '第二写法';
+    for ($i = 1; $i <= 100; $i++) {
+        if ($i % 5 == 0 && $i % 3 == 0) {
+            echo 'foobar   ';
+        } elseif ($i % 5 == 0) {
+            echo 'bar   ';
+        } elseif ($i % 3 == 0) {
+            echo 'foo   ';
+        }
+    };
+    ?>
+    </pre>
+    <hr>
+    <!-- js部分 -->
+    <script>
+        let num = 0;
+        $('.add').click(function(){
+            if ($('input').val() == '') {
+                alert('请输入内容');
+            } else {  
+                num++;
+                $('.centent').prepend(`<li class="a"><span> X </span>${$('input').val()}</li>`);
+                $('span').click(function(){
+                    $(this).parent().remove();
+                })
+            }
+        })
+        $('.drop').click(function(){
+            $('.a').remove();
+        })
+    </script>
+</body>
+</html>
